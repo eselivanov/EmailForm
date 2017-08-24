@@ -56,7 +56,7 @@ function processAllFieldsOfTheForm(req, res) {
         var to       = fields.to;
         var body     = fields.body;
         var filepath = files.filetoupload.path;
-        //      var newpath  = 'C:/Coding/Node/Temp/' + files.filetoupload.name;
+        //      var newpath  = 'C:/<..path..>/' + files.filetoupload.name;
 
         res.writeHead(200, {
             'content-type': 'text/plain'
