@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <h3> Let's send an email ..</h3>
+    <form action="sendemail" method="post" enctype="multipart/form-data">
+      <label for "from">From : </label>
+      <input type="email" name="from">
+      <br /><br />
+      <label for "to"  >To   : &nbsp&nbsp&nbsp&nbsp</label>
+      <input type="email" name="to">
+      <br /><br />
+      <fieldset>
+        <legend>[ Craft your email message here: ]</legend>
+        <textarea name="body" cols="40" rows="10"></textarea>
+        <br />
+      </fieldset>
+      <br />
+      <label for "filetoaupload">Attach a file : </label>
+      <input type="file" name="filetoupload">
+      <br /><br />
+      <input type="submit" value="Send">
+    </form> 
+  </body>
+</html>
