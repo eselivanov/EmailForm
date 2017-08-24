@@ -153,7 +153,7 @@ function sendEmail(fields, stat) {
   var transporter = nodemailer.createTransport({
       service : 'gmail',
       auth    : {
-          user  : 'eselivanov@gmail.com',
+          user  : 'wyz@gmail.com',
           pass  : '**************' // put your password here ..
       }
   });
@@ -177,12 +177,12 @@ function sendEmail(fields, stat) {
 
       //console.log( info );
       //{ 
-      //  accepted: [ 'eselivanov@gmail.com' ],
+      //  accepted: [ 'xyzv@gmail.com' ],
       //  rejected: [],
       //  response: '250 2.0.0 OK 1503414947 h21sm10188817qta.58 - gsmtp',
       //  envelope: { 
-      //    from: 'eselivanov@gmail.com', 
-      //    to: [ 'eselivanov@gmail.com' ] 
+      //    from: 'xyz@gmail.com', 
+      //    to: [ 'xyz@gmail.com' ] 
       //  },
       //  messageId: '<29485252-dd3e-fc39-9920-50436443d636@gmail.com>' 
       //}
