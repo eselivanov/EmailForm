@@ -8,8 +8,11 @@ https://www.sitepoint.com/creating-and-handling-forms-in-node-js/
 'use strict';
 
 const http = require('http');
-const fs   = require('fs');
+//const fs   = require('fs');     // used directly in the module myForm
 const util = require('util');
+
+//my modules:
+const myForm = require('./form');   //usage: myForm.showForm( res );
 
 // external modules to load:
 const formidable = require('formidable');  
@@ -20,7 +23,7 @@ var port = '8080';
 var ws = http.createServer( (req, res) => {        
     // disp. http form as persponse or parse results upon form submission
     if (req.method.toLowerCase() == 'get') {
-        displayForm(res);
+        myForm.showForm(res);
     } else if (req.method.toLowerCase() == 'post' || req.url == '/sendemail') {
     //processAllFieldsOfTheForm(req, res);
         processFormFieldsIndividual(req, res);
@@ -28,18 +31,6 @@ var ws = http.createServer( (req, res) => {
 });
 
 
-// disp. http form as persponse
-function displayForm( res ) {
-    fs.readFile('form.html', function (err, data) {
-        if (err) throw err;
-        res.writeHead(200, {
-            'Content-Type': 'text/html',
-            'Content-Length': data.length
-        });
-        res.write( data );
-        return res.end();     // or    res.end();  what's the difference?
-    });
-}
 
 // parse results upon form submission - altogether at once
 /*
